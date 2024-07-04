@@ -66,8 +66,13 @@ function App() {
     });
   }
 
+  const contxtValue = {
+    items: shoppingCart.items,
+    addItemToCart: handleAddItemToCart,
+  }
+
   return (
-    <CartContext.Provider value={{ items: [] }}>
+    <CartContext.Provider value={contxtValue}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
